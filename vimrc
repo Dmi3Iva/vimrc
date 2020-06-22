@@ -1,3 +1,25 @@
+"plugins
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
+"set up emmet only for html and css
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,scss EmmetInstall
+" redefime leader_key
+let g:user_emmet_leader_key=','
+
+"plugins end
+
+
+
+
 " Vim with all enhancements
 source $VIMRUNTIME/vimrc_example.vim
 
