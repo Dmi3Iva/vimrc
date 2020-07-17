@@ -6,6 +6,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 call plug#end()
 
@@ -14,6 +15,15 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,scss EmmetInstall
 " redefime leader_key
 let g:user_emmet_leader_key=','
+
+
+" Start autocompletion after 4 chars
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+" " Don't show YCM's preview window [ I find it really annoying ]
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
 
 "plugins end
 
