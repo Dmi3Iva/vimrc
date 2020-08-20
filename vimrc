@@ -10,9 +10,10 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 
 call plug#end()
 
-"set up emmet only for html and css
+"set up emmet only for html and Ass
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss EmmetInstall
+autocmd FileType html,css,scss,js,javascript,javascript.jsx EmmetInstall
+let g:user_emmet_settings = {'javascript' : {'extends' : 'jsx',},}
 " redefime leader_key
 let g:user_emmet_leader_key=','
 
@@ -72,6 +73,11 @@ function MyDiff()
 endfunction
 
 " MY SETUP
+" set backup files and swap files on other folder
+set backupdir=~/\.vim/tmp//,.
+set directory=~/\.vim/tmp//,.
+set undodir=~/\.vim/tmp//,.
+
 " ENCODING
 set encoding=utf-8
 " FONT uncomment if system font bad
@@ -103,3 +109,4 @@ if has("autocmd")
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
+
